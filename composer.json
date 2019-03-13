@@ -1,0 +1,13 @@
+{
+    "name": "regionhalland/region-halland-a-b-c-page-links-repeater",
+    "description": "Funktion för att skapa abc-länk-listor + hämta ut i front-end",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Roland Hydén",
+            "email": "Roland.Hyden@Regionhalland.se"
+        }
+    ],
+    "require": {}
+}
