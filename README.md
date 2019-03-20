@@ -345,5 +345,8 @@ array (size=8)
 
 ## Versionhistorik
 
+### 1.0.1
+- Justerat så att åäö fungerar
+
 ### 1.0.0
 - Första version

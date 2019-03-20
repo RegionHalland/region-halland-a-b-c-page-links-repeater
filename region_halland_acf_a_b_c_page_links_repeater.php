@@ -6,9 +6,9 @@
 	/*
 	Plugin Name: Region Halland ACF A-B-C Page Links Repeater
 	Description: ACF-fält för extra fält nederst på en utbildning-sida
-	Version: 1.0.0
+	Version: 1.0.1
 	Author: Roland Hydén
-	License: Free to use
+	License: MIT
 	Text Domain: regionhalland
 	*/
 
@@ -105,9 +105,25 @@
 			$strLinkTitle  = $arrLinks['title'];
 			$strLinkUrl    = $arrLinks['url'];
 			$strLinkTarget = $arrLinks['target'];
-			
+			$strFirstLetter = strtoupper(mb_substr($strLinkTitle, 0, 1));
+			switch ($strFirstLetter) {
+			     case 'Å':
+			         $intFirstLetter = 27;
+			         break;
+			     case 'Ä':
+			         $intFirstLetter = 28;
+			         break;
+			     case 'Ö':
+			         $intFirstLetter = 29;
+			         break;
+			     default:
+					$intFirstLetter = ord(strtolower($strFirstLetter)) - 96;
+			 } 
+
 			// Pusha alla variabler till temporär array
 			array_push($myLinks, array(
+	           'first_letter'  => $strFirstLetter,
+	           'first_letter_number'  => $intFirstLetter,
 	           'link_title'  => $strLinkTitle,
 	           'link_url'    => $strLinkUrl,
 	           'link_target' => $strLinkTarget
@@ -135,7 +151,7 @@
 			$strLinkTitle   = $links['link_title'];
 			$strLinkUrl     = $links['link_url'];
 			$strLinkTarget  = $links['link_target'];
-			$strCheckLetter = strtolower(substr($strLinkTitle, 0, 1));
+			$strCheckLetter = strtolower(mb_substr($strLinkTitle, 0, 1));
 			
 			// Kolla om det är en ny bokstav, sätt till 0 och tomt annars
 			if ($lastLetter <> $strCheckLetter) {
@@ -173,7 +189,7 @@
 		}
 		
 		$myPreparedAllLetters = array();
-		$strAllLetters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,å,ä,ö";
+		$strAllLetters = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,Å,Ä,Ö";
 		$arrAllLetters = explode(",",$strAllLetters);
 		foreach ($arrAllLetters as $letter) {
 			$strLetterU 	= strtoupper($letter);
@@ -202,8 +218,13 @@
 	
 	// Funktion för att sortera en array baserat på kolumn, i detta fall kolumnen 'title'
 	function region_halland_acf_abc_page_links_repeater_sort_by_link_title($a, $b) {
-  		return strcmp($a["link_title"], $b["link_title"]);
+  		return region_halland_acf_abc_page_links_repeater_intcmp($a["first_letter_number"], $b["first_letter_number"]);
 	}
+
+	function region_halland_acf_abc_page_links_repeater_intcmp($a,$b)
+    {
+    	return ($a-$b) ? ($a-$b)/abs($a-$b) : 0;
+    }
 
 	// Metod som anropas när pluginen aktiveras
 	function region_halland_acf_abc_page_links_repeater_activate() {
