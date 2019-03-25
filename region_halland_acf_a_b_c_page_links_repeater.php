@@ -6,7 +6,7 @@
 	/*
 	Plugin Name: Region Halland ACF A-B-C Page Links Repeater
 	Description: ACF-fält för extra fält nederst på en utbildning-sida
-	Version: 1.0.1
+	Version: 1.0.2
 	Author: Roland Hydén
 	License: MIT
 	Text Domain: regionhalland
@@ -42,7 +42,7 @@
 			            ),
 			            'collapsed' => '',
 			            'min' => 0,
-			            'max' => 100,
+			            'max' => 250,
 			            'layout' => 'row',
 			            'button_label' => '',
 			            'sub_fields' => array(
@@ -185,7 +185,7 @@
 	        ));
 
 	        // Uppdatera variabel för sista bokstav i loopen
-			$lastLetter = $strLetter;
+			$lastLetter = $strCheckLetter;
 		}
 		
 		$myPreparedAllLetters = array();

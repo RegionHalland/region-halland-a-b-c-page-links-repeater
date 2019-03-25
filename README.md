@@ -345,6 +345,9 @@ array (size=8)
 
 ## Versionhistorik
 
+### 1.0.2
+- Fel variabelnamn i bokstavs-loop åtgärdat
+
 ### 1.0.1
 - Justerat så att åäö fungerar
 
