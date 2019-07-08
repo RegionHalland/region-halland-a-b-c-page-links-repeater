@@ -10,6 +10,15 @@ Nedan följer instruktioner hur du kan använda pluginet "region-halland-a-b-c-p
 Denna plugin skapar en sidmall med namn "abc-lista" som sedan kan visa länklistor.
 
 
+## Licensmodell
+
+Denna plugin använder licensmodell GPL-3.0. Du kan läsa mer om denna licensmodell på:
+```sh
+A) Gnu.org (https://www.gnu.org/licenses/gpl-3.0.html)
+B) Wikipedia (https://sv.wikipedia.org/wiki/GNU_General_Public_License)
+```
+
+
 ## Installation och aktivering
 
 ```sh
@@ -344,6 +353,9 @@ array (size=8)
 
 
 ## Versionhistorik
+
+### 1.1.0
+- Lagt till information om licensmodell
 
 ### 1.0.2
 - Fel variabelnamn i bokstavs-loop åtgärdat

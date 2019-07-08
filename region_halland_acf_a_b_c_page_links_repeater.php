@@ -6,9 +6,9 @@
 	/*
 	Plugin Name: Region Halland ACF A-B-C Page Links Repeater
 	Description: ACF-fält för extra fält nederst på en utbildning-sida
-	Version: 1.0.2
+	Version: 1.1.0
 	Author: Roland Hydén
-	License: MIT
+	License: GPL-3.0
 	Text Domain: regionhalland
 	*/
 
