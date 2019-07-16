@@ -12,10 +12,9 @@ Denna plugin skapar en sidmall med namn "abc-lista" som sedan kan visa länklist
 
 ## Licensmodell
 
-Denna plugin använder licensmodell GPL-3.0. Du kan läsa mer om denna licensmodell på:
+Denna plugin använder licensmodell GPL-3.0. Du kan läsa mer om denna licensmodell via den medföljande filen:
 ```sh
-A) Gnu.org (https://www.gnu.org/licenses/gpl-3.0.html)
-B) Wikipedia (https://sv.wikipedia.org/wiki/GNU_General_Public_License)
+LICENSE (https://github.com/RegionHalland/region-halland-a-b-c-page-links-repeater/blob/master/LICENSE)
 ```
 
 
@@ -353,6 +352,9 @@ array (size=8)
 
 
 ## Versionhistorik
+
+### 1.2.0
+- Bifogat fil med licensmodell
 
 ### 1.1.0
 - Lagt till information om licensmodell
