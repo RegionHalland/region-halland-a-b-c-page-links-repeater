@@ -353,6 +353,9 @@ array (size=8)
 
 ## Versionhistorik
 
+### 1.3.1
+- Korrigerat versionsnummer
+
 ### 1.3.0
 - Korrigerat länk till licens-fil
 
